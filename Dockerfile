@@ -14,3 +14,9 @@ RUN phpize && ./configure && make
 
 FROM devwithlando/php@sha256:0ae90f095fcd18ace1723441fad32f9df80266ae1b6eb4739185beed549ee774
 COPY --from=xdebug-patch /root/xdebug/modules/xdebug.so /usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       vim \
+       nano \
+    && rm -rf /var/lib/apt/lists/*
