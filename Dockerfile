@@ -5,7 +5,11 @@ RUN apt-add-repository -y ppa:ondrej/php \
         pkg-config \
         php7.4-dev \
         git \
-        make
+        make \
+        vim \
+        nano \
+        pngquant \
+        jpegoptim
 
 WORKDIR /root
 RUN git clone -b xdebug_2_9 https://github.com/dermario/xdebug.git
